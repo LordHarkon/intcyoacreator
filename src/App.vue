@@ -69,9 +69,9 @@
 
 <script>
 // The imported components
-// import ImageCyoa from "./components/ImageCyoa.vue";
-// import ImageCyoaViewer from "./components/ImageCyoaViewer.vue";
-// import Information from "./components/Information.vue";
+import ImageCyoa from "./components/ImageCyoa.vue";
+import ImageCyoaViewer from "./components/ImageCyoaViewer.vue";
+import Information from "./components/Information.vue";
 
 export default {
   data: function () {
@@ -87,9 +87,9 @@ export default {
     };
   },
   components: {
-    // appImageCyoa: ImageCyoa,
-    // appImageCyoaViewer: ImageCyoaViewer,
-    // appInformation: Information,
+    appImageCyoa: ImageCyoa,
+    appImageCyoaViewer: ImageCyoaViewer,
+    appInformation: Information,
   },
   computed: {},
   methods: {},

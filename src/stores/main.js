@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useCounterStore = defineStore("main", {
+export const useMainStore = defineStore("main", {
   state: () => ({
     currentDesignComponent: "none",
     // This is the large object that holds the data of the current CYOA,

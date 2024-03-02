@@ -11,8 +11,18 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "base64toblob": "^0.0.2",
+    "compress.js": "^1.2.2",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jszip": "^3.10.1",
     "pinia": "^2.1.7",
+    "sanitize-html": "^2.12.1",
     "vue": "^3.4.15",
+    "vue-advanced-cropper": "^2.8.8",
+    "vue-picture-input": "^3.0.1",
+    "vue3-lazyload": "^0.3.8",
+    "vuedraggable": "^2.24.3",
     "vuetify": "^3.5.7"
   },
   "devDependencies": {

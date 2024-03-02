@@ -1,82 +1,44 @@
 <template>
   <div style="text-align: center" class="pb-12" :style="background">
-    <v-navigation-drawer
-      data-html2canvas-ignore
-      v-model="drawer"
-      expand-on-hover
-      :permanent="drawer"
-      :mini-variant="mini"
-      app
-    >
-      <v-layout column fill-height>
-        <v-list dense>
-          <v-list-item @click="cleanCurrentComponent" v-on="on">
-            <v-list-item-icon>
-              <v-icon>mdi-chevron-left</v-icon>
-            </v-list-item-icon>
+    <v-navigation-drawer data-html2canvas-ignore expand-on-hover rail v-model="drawer" :permanent="drawer">
+      <v-list density="compact" nav>
+        <v-list-item
+          @click="cleanCurrentComponent"
+          prepend-icon="mdi-chevron-left"
+          title="Return To Menu"
+        ></v-list-item>
 
-            <v-list-item-content>
-              <v-list-item-title>Return To Menu </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+        <v-divider></v-divider>
 
-          <v-divider></v-divider>
+        <v-list-item @click="createNewRow" prepend-icon="mdi-file-plus" title="Create New Row"></v-list-item>
 
-          <v-list-item @click="createNewRow" v-on="on">
-            <v-list-item-icon>
-              <v-icon>mdi-file-plus</v-icon>
-            </v-list-item-icon>
+        <v-list-item
+          v-for="item in navComponentButtons"
+          @click="currentComponent = item.component"
+          :key="item.title"
+          :prepend-icon="item.icon"
+          :title="item.text"
+        >
+        </v-list-item>
+      </v-list>
 
-            <v-list-item-content>
-              <v-list-item-title>Create New Row</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+      <v-spacer></v-spacer>
 
-          <v-list-item v-for="item in navComponentButtons" @click="currentComponent = item.component" :key="item.title">
-            <v-list-item-icon v-on="on">
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
+      <v-list density="compact" nav>
+        <v-list-item
+          @click="cleanSelectedChoices"
+          prepend-icon="mdi-select-off"
+          title="Clean Selected Choices"
+        ></v-list-item>
 
-            <v-list-item-content>
-              <v-list-item-title>{{ item.text }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
+        <v-list-item
+          @click="currentComponent = 'appIdSearch'"
+          prepend-icon="mdi-clipboard-list"
+          title="See ID/Title List"
+        ></v-list-item>
 
-        <v-spacer></v-spacer>
-
-        <v-list dense>
-          <v-list-item @click="cleanSelectedChoices" v-on="on">
-            <v-list-item-icon>
-              <v-icon>mdi-select-off</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>Clean Selected Choices</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item @click="currentComponent = 'appIdSearch'" v-on="on">
-            <v-list-item-icon>
-              <v-icon>mdi-clipboard-list</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title> See ID/Title List </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item @click="drawer = !drawer" v-on="on">
-            <v-list-item-icon>
-              <v-icon>mdi-menu</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title> Use Alternate Menu </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-layout>
+        <v-list-item @click="drawer = !drawer" prepend-icon="mdi-menu" title="Use Alternate Menu"></v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
     <v-main

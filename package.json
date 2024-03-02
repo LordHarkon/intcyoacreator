@@ -17,10 +17,12 @@
     "html2canvas": "^1.4.1",
     "jszip": "^3.10.1",
     "pinia": "^2.1.7",
+    "ress": "^5.0.2",
     "sanitize-html": "^2.12.1",
     "vue": "^3.4.15",
     "vue-advanced-cropper": "^2.8.8",
     "vue-picture-input": "^3.0.1",
+    "vue-select": "^4.0.0-beta.6",
     "vue3-lazyload": "^0.3.8",
     "vuedraggable": "^2.24.3",
     "vuetify": "^3.5.7"
